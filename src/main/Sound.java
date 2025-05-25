@@ -18,6 +18,12 @@ public Sound(){
     soundURL[2] = getClass().getResource("/sound/pickUp.wav");
     soundURL[3] = getClass().getResource("/sound/powerUp.wav");
     soundURL[4] = getClass().getResource("/sound/MenuTheme2.wav");
+    soundURL[5] = getClass().getResource("/sound/PlayTheme.wav");
+    soundURL[6] = getClass().getResource("/sound/menuTheme3.wav");
+    soundURL[7] = getClass().getResource("/sound/hit.wav");
+    soundURL[8] = getClass().getResource("/sound/slash.wav");
+    soundURL[9] = getClass().getResource("/sound/deathsound.wav");
+
 }
 public void setFile(int i){
 

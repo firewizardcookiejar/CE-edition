@@ -44,6 +44,8 @@ public class GamePanel extends JPanel implements Runnable{
 	public UI ui = new UI(this);
 	public EventHandler eHandler = new EventHandler(this);
 	Thread gameThread; 
+	int currentTrack = 0;
+	boolean musicPlaying = false;
 
 	//Entity and Objects
 	public Player player = new Player(this,keyH);
@@ -74,9 +76,9 @@ public class GamePanel extends JPanel implements Runnable{
 		aSetter.setObject();
 		aSetter.setNPC();
 		aSetter.setMonster();
-		playMenuMusic(4);
 		//stopMusic();
 		gameState = titleState;
+		playMenuMusic(6);
 	}
 	
 	public void startGameThread(){
@@ -115,6 +117,7 @@ public class GamePanel extends JPanel implements Runnable{
 		
 		if(gameState == playState){
 			player.update();
+			playMusic(5);
 			
 			for(int i = 0; i < npc.length; i++){
 				if(npc[i] != null){
@@ -123,7 +126,14 @@ public class GamePanel extends JPanel implements Runnable{
 			}
 			for(int i = 0; i < monster.length; i++){
 				if(monster[i] != null){
-					monster[i].update();
+					if(monster[i].alive == true && monster[i].dying == false){
+						monster[i].update();
+					}
+					if(monster[i].alive == false){
+						monster[i] = null;
+					}
+
+					
 				}
 			}
 		}
@@ -190,9 +200,17 @@ public class GamePanel extends JPanel implements Runnable{
 		g2.dispose();
 	}
 	public void playMusic(int i){
-		music.setFile(i);
-		music.play();
-		music.loop();
+		//music.setFile(i);
+		//music.play();
+		//music.loop();
+		if(currentTrack != i || !musicPlaying){
+			stopMusic();
+			currentTrack = i;
+			music.setFile(i);
+			music.play();
+			music.loop();
+			musicPlaying = true;
+		}
 	}
 	public void playMenuMusic(int i){
 		music.setFile(i);

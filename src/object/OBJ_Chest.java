@@ -13,6 +13,6 @@ public class OBJ_Chest extends Entity{
             super(gp);
 
         name = "Chest";
-        down1 = setup("/objects/OBJ_Chest");
+        down1 = setup("/objects/OBJ_Chest",gp.tileSize, gp.tileSize);
     }
 }

@@ -13,6 +13,6 @@ public class OBJ_Key extends Entity{
             super(gp);
 
         name = "Key";
-        down1 = setup("/objects/OBJ_Key");
+        down1 = setup("/objects/OBJ_Key",gp.tileSize, gp.tileSize);
     }
 }

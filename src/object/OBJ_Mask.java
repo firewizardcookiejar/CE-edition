@@ -13,7 +13,7 @@ public class OBJ_Mask extends Entity{
             super(gp);
 
         name = "Mask";
-        down1 = setup("/objects/OBJ_Mask");
+        down1 = setup("/objects/OBJ_Mask",gp.tileSize, gp.tileSize);
         collision = true;
     }
 }

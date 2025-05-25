@@ -28,10 +28,10 @@ public class OBJ_Campfire extends Entity{
 		solidArea.width = 33;
 		solidArea.height = 33;
         name = "Campfire";
-        down1 = setup("/objects/firepit_1");
-		down2 = setup("/objects/firepit_2");
-		down3 = setup("/objects/firepit_3");
-		down4 = setup("/objects/firepit_4");
+        down1 = setup("/objects/firepit_1",gp.tileSize, gp.tileSize);
+		down2 = setup("/objects/firepit_2",gp.tileSize, gp.tileSize);
+		down3 = setup("/objects/firepit_3",gp.tileSize, gp.tileSize);
+		down4 = setup("/objects/firepit_4",gp.tileSize, gp.tileSize);
 
         collision = true;
         

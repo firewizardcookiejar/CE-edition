@@ -60,6 +60,8 @@ public class UI {
         // Do playState
         if(gp.gameState == gp.playState){
           drawPlayerLife();
+          
+          
         } 
         //Do pause state
         if(gp.gameState == gp.pauseState){
@@ -111,7 +113,7 @@ public class UI {
         //TITLE NAME
         g2.setFont(g2.getFont().deriveFont(Font.BOLD,96F));
         g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON); //makes the text smooth and handsome with anti antilasing
-        String text = "CE edition";
+        String text = "Cat's Cradle";
         int x = getXforCenteredText(text);
         int y = gp.tileSize*3;
 
@@ -126,7 +128,10 @@ public class UI {
         //title splash art
         x = gp.screenWidth/2 - (gp.tileSize*2)/2;
         y += gp.tileSize*2;
-        g2.drawImage(gp.npc[0].up3, x, y, gp.tileSize*2, gp.tileSize*2, null);
+        if(gp.npc[0] != null){
+            g2.drawImage(gp.npc[0].up3, x, y, gp.tileSize*2, gp.tileSize*2, null);
+        }
+        
 
         // MENU
         g2.setFont(g2.getFont().deriveFont(Font.BOLD,48F));
@@ -158,6 +163,7 @@ public class UI {
 
         }
         else if(titleScreenState == 1){
+            
 
             //CLASS SELECTION MENU
             g2.setColor(Color.white);

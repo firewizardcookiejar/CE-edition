@@ -13,6 +13,6 @@ public class OBJ_Door extends Entity{
             super(gp);
 
         name = "Door";
-        down1 = setup("/objects/OBJ_Door");
+        down1 = setup("/objects/OBJ_Door",gp.tileSize, gp.tileSize);
     }
 }
